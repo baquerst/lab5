@@ -3,7 +3,14 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	$(".friend-name h3").click(listenerFunction);
 })
+
+function listenerFunction(e) {
+	e.preventDefault();
+	var clickedName = $(this).text();
+	$(this).replaceWith("<h3>" + anagrammedName(clickedName) +"</h3>");
+}
 
 /*
  * Function that is called when the document is ready.
